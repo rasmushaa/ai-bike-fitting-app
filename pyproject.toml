@@ -1,0 +1,33 @@
+[project]
+name = "ai-bike-fitting-app"
+version = "0.1.0"
+description = "A tiny Streamlit demo for video-based cycling joint angles"
+readme = "README.md"
+authors = [
+    { name = "rasmushaa", email = "rasmus.haapaniemi@outlook.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "altair>=6.3.0",
+    "imageio-ffmpeg>=0.6.0",
+    "numpy>=2.4.6",
+    "opencv-python-headless>=5.1.0.95",
+    "scipy>=1.15.0",
+    "streamlit>=1.67.0",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "ultralytics-opencv-headless>=8.4.216",
+]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"

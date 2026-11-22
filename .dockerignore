@@ -1,0 +1,12 @@
+.git
+.venv
+.cache
+**/__pycache__
+.pytest_cache
+.DS_Store
+models
+tests
+*.mp4
+*.mov
+*.m4v
+*.avi
